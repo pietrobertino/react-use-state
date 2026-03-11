@@ -3,12 +3,21 @@ import MainCard from "./MainCard"
 
 export default function AppTabs({ languages }) {
 
-    const [show, setShow] = useState(1); // ho dato come valore iniziale l'id di html (primo linguaggio)
+    const [show, setShow] = useState(0); // ho dato come valore iniziale l'id di html (primo linguaggio)
 
     //dichiarando le seguenti variabili registro l'oggetto dell'array corrispondente all'id e accedo al suo valore associato alla chiave description e alla chaive title
-    const cardToShow = languages.find(language => { return language.id === show });
-    const cardTitle = cardToShow.title;
-    const cardDescription = cardToShow.description;
+
+
+
+    let cardToShow = languages.find(language => { return language.id === show });
+    let cardTitle = "";
+    let cardDescription = "";
+
+    if (show != 0) {
+        cardTitle = cardToShow.title;
+        cardDescription = cardToShow.description;
+    }
+
 
     return (
         <div className="container px-5">
@@ -22,10 +31,10 @@ export default function AppTabs({ languages }) {
             {/* Inserirsco all'interno della card la descrizione del linguaggio */}
             <div className="card p-3">
                 <div className=" card-title fs-3 fw-bolder">
-                    {cardTitle}
+                    {(show != 0) ? cardTitle : "Nessun linguaggio selezionato"}
                 </div>
                 <div className=" card-text">
-                    {cardDescription}
+                    {(show != 0) && cardDescription}
                 </div>
             </div>
 
