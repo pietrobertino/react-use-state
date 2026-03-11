@@ -1,4 +1,4 @@
-export default function MainCard(selected, cardTitle, cardDescription) {
+export default function MainCard({ selected, cardTitle, cardDescription }) {
 
 
     return (

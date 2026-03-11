@@ -30,17 +30,7 @@ export default function AppTabs({ languages }) {
             ))}
             {/* in questo modo il valore di selected è 0 all'inizio e diventa un altro corrispondente all'id di un linguaggio quando il relativo pulsante viene premuto */}
 
-            {/* Inserirsco all'interno della card la descrizione del linguaggio */}
-            <div className="card p-3">
-                <div className=" card-title fs-3 fw-bolder">
-                    {(selected != 0) ? cardTitle : "Nessun linguaggio selezionato"}
-                    {/* se selected è diverso da zero (un linguaggio è selezionato) mostra il titolo, altrimenti il messaggio di default */}
-                </div>
-                <div className=" card-text">
-                    {(selected != 0) && cardDescription}
-                    {/* se un linguaggio è selezionato mostrane la descrizione */}
-                </div>
-            </div>
+
 
             <MainCard selected={selected} cardTitle={cardTitle} cardDescription={cardDescription} />
 
