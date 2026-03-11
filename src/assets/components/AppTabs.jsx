@@ -42,6 +42,8 @@ export default function AppTabs({ languages }) {
                 </div>
             </div>
 
+            <MainCard selected={selected} cardTitle={cardTitle} cardDescription={cardDescription} />
+
 
         </div>
     )
