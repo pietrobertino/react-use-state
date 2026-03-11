@@ -1,3 +1,5 @@
+import AppHeader from "./assets/components/AppHeader";
+import AppTabs from "./assets/components/AppTabs";
 
 
 const languages = [
@@ -40,7 +42,8 @@ function App() {
 
   return (
     <>
-
+      <AppHeader />
+      <AppTabs languages={languages} />
     </>
   )
 }
